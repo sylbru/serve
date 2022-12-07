@@ -37,7 +37,7 @@ export const getNetworkAddress = (): string | undefined => {
     for (const details of interfaceDetails) {
       const { address, family, internal } = details;
 
-      if (family === 'IPv4' && !internal) return address;
+      if ((family === 'IPv4' || family === 4) && !internal) return address;
     }
   }
 };
